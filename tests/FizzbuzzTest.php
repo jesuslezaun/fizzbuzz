@@ -22,10 +22,10 @@ final class FizzbuzzTest extends TestCase
         $number_no_fizzbuzz = 7;
 
         //Act
-        $returned_fizzbuzz = $fizzbuzz->fizzbuzz_generate($number_fizzbuzz);
-        $returned_fizz = $fizzbuzz->fizzbuzz_generate($number_fizz);
-        $returned_buzz = $fizzbuzz->fizzbuzz_generate($number_buzz);
-        $returned_no_fizzbuzz = $fizzbuzz->fizzbuzz_generate($number_no_fizzbuzz);
+        $returned_fizzbuzz = $fizzbuzz->generate($number_fizzbuzz);
+        $returned_fizz = $fizzbuzz->generate($number_fizz);
+        $returned_buzz = $fizzbuzz->generate($number_buzz);
+        $returned_no_fizzbuzz = $fizzbuzz->generate($number_no_fizzbuzz);
 
         //Assert
         self::assertEquals("fizzbuzz", $returned_fizzbuzz);
@@ -48,10 +48,10 @@ final class FizzbuzzTest extends TestCase
         $number_not_contains_three_not_divisible_by_three = 19;
 
         //Act
-        $contains_three = $fizzbuzz->fizz($number_contains_three);
-        $divisible_by_three = $fizzbuzz->fizz($number_divisible_by_three);
-        $contains_three_and_divisible_by_three = $fizzbuzz->fizz($number_contains_three_and_divisible_by_three);
-        $not_contains_three_not_divisible_by_three = $fizzbuzz->fizz($number_not_contains_three_not_divisible_by_three);
+        $contains_three = $fizzbuzz->isFizz($number_contains_three);
+        $divisible_by_three = $fizzbuzz->isFizz($number_divisible_by_three);
+        $contains_three_and_divisible_by_three = $fizzbuzz->isFizz($number_contains_three_and_divisible_by_three);
+        $not_contains_three_not_divisible_by_three = $fizzbuzz->isFizz($number_not_contains_three_not_divisible_by_three);
 
         //Assert
         self::assertTrue($contains_three);
@@ -73,10 +73,10 @@ final class FizzbuzzTest extends TestCase
         $number_not_contains_five_not_divisible_by_five = 23;
 
         //Act
-        $contains_five = $fizzbuzz->buzz($number_contains_five);
-        $divisible_by_five = $fizzbuzz->buzz($number_divisible_by_five);
-        $contains_five_and_divisible_by_five = $fizzbuzz->buzz($number_contains_five_and_divisible_by_five);
-        $not_contains_five_not_divisible_by_five = $fizzbuzz->buzz($number_not_contains_five_not_divisible_by_five);
+        $contains_five = $fizzbuzz->isBuzz($number_contains_five);
+        $divisible_by_five = $fizzbuzz->isBuzz($number_divisible_by_five);
+        $contains_five_and_divisible_by_five = $fizzbuzz->isBuzz($number_contains_five_and_divisible_by_five);
+        $not_contains_five_not_divisible_by_five = $fizzbuzz->isBuzz($number_not_contains_five_not_divisible_by_five);
 
         //Assert
         self::assertTrue($contains_five);

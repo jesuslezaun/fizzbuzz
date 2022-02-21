@@ -12,25 +12,28 @@ class Fizzbuzz
         
         for($number= 0; $number < $limit; $number++)
         {
-            print $this->fizzbuzz_generate($number);
+            print $this->generate($number);
         }
     }
-    function fizzbuzz_generate(int $number): string
+
+    function generate(int $number): string
     {
-        if($this->fizz($number) and $this->buzz($number))
+        if($this->isFizz($number) and $this->isBuzz($number))
             return "fizzbuzz";
-        else if($this->fizz($number))
+        else if($this->isFizz($number))
             return "fizz";
-        else if($this->buzz($number))
+        else if($this->isBuzz($number))
             return "buzz";
         else
             return strval($number);
     }
-    function fizz(int $number): bool
+
+    function isFizz(int $number): bool
     {
         return ($this->divisible_by_three($number) or $this->contains_three($number));
     }
-    function buzz(int $number): bool
+
+    function isBuzz(int $number): bool
     {
         return ($this->divisible_by_five($number) or $this->contains_five($number));
     }
